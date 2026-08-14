@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="400" viewBox="0 0 820 400" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#010409"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="820" height="400" fill="url(#bg)"/>
+  <text x="410" y="40" fill="#e6edf3" font-size="22" font-weight="700" text-anchor="middle">Book Cipher Kit — Architecture</text>
+
+  <!-- Shared book -->
+  <rect x="30" y="130" width="190" height="90" rx="10" fill="url(#box)" stroke="#f0883e" stroke-width="2"/>
+  <text x="125" y="160" fill="#f0883e" font-size="14" font-weight="700" text-anchor="middle">the shared book</text>
+  <text x="125" y="182" fill="#8b949e" font-size="12" text-anchor="middle">same edition, both sides</text>
+  <text x="125" y="200" fill="#8b949e" font-size="12" text-anchor="middle">text file of lines</text>
+
+  <!-- Encode -->
+  <rect x="290" y="60" width="240" height="100" rx="10" fill="url(#box)" stroke="#58a6ff" stroke-width="2"/>
+  <text x="410" y="92" fill="#58a6ff" font-size="15" font-weight="700" text-anchor="middle">encode</text>
+  <text x="410" y="114" fill="#8b949e" font-size="12" text-anchor="middle">"meet at dawn"</text>
+  <text x="410" y="134" fill="#8b949e" font-size="12" text-anchor="middle">→ (line, word, char) triples</text>
+
+  <!-- Positions -->
+  <rect x="330" y="230" width="160" height="80" rx="10" fill="url(#box)" stroke="#f85149" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="410" y="260" fill="#f85149" font-size="14" font-weight="700" text-anchor="middle">positions</text>
+  <text x="410" y="282" fill="#8b949e" font-size="12" text-anchor="middle">12.4.2</text>
+  <text x="410" y="298" fill="#8b949e" font-size="12" text-anchor="middle">3.1.0 …</text>
+
+  <!-- Decode -->
+  <rect x="290" y="310" width="240" height="70" rx="10" fill="url(#box)" stroke="#3fb950" stroke-width="2"/>
+  <text x="410" y="340" fill="#3fb950" font-size="15" font-weight="700" text-anchor="middle">decode</text>
+  <text x="410" y="360" fill="#8b949e" font-size="12" text-anchor="middle">triples + book → message</text>
+
+  <!-- Arrows -->
+  <path d="M 220 170 C 260 170, 260 120, 290 110" fill="none" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M 410 160 L 410 230" fill="none" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M 220 180 C 260 180, 260 330, 290 340" fill="none" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M 410 310 L 410 235" fill="none" stroke="#8b949e" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="410" y="385" fill="#8b949e" font-size="11" text-anchor="middle">No key. Only the book. Fiction prop for novel research.</text>
+</svg>

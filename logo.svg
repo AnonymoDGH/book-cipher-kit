@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#010409"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- open book -->
+  <path d="M 96 180 Q 160 140 256 170 Q 352 140 416 180 L 416 340 Q 352 300 256 330 Q 160 300 96 340 Z"
+        fill="#1f2937" stroke="#d29922" stroke-width="8" stroke-linejoin="round"/>
+  <!-- spine -->
+  <line x1="256" y1="170" x2="256" y2="330" stroke="#d29922" stroke-width="6"/>
+  <!-- pages -->
+  <path d="M 96 180 Q 160 150 246 172 M 266 172 Q 352 150 416 180" fill="none" stroke="#d29922" stroke-width="4" opacity="0.6"/>
+  <!-- key -->
+  <circle cx="340" cy="250" r="20" fill="#e3b341" stroke="#d29922" stroke-width="5"/>
+  <line x1="356" y1="264" x2="402" y2="310" stroke="#e3b341" stroke-width="16" stroke-linecap="round"/>
+  <line x1="384" y1="300" x2="400" y2="316" stroke="#e3b341" stroke-width="10" stroke-linecap="round"/>
+  <line x1="370" y1="314" x2="386" y2="330" stroke="#e3b341" stroke-width="10" stroke-linecap="round"/>
+</svg>
