@@ -2,7 +2,7 @@
 
 # 📖 Book Cipher Kit
 
-<img src="logo.svg" alt="Book Cipher Kit" width="180"/>
+<img src="https://raw.githubusercontent.com/AnonymoDGH/book-cipher-kit/main/logo.svg" alt="Book Cipher Kit" width="180"/>
 
 **The cipher that needs no key — only a shared book.**
 
@@ -83,7 +83,7 @@ bookcipher decode --book novel.txt --input coords.txt
 
 ## How it works
 
-<img src="assets/architecture.svg" alt="Architecture" width="820"/>
+<img src="https://raw.githubusercontent.com/AnonymoDGH/book-cipher-kit/main/assets/architecture.svg" alt="Architecture" width="820"/>
 
 ## Tests
 
