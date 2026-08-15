@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "book-cipher-kit"
-version = "0.1.0"
+version = "0.2.0"
 description = "Encode and decode messages as positions inside a shared book — the cipher that needs no key."
 readme = "README.md"
 requires-python = ">=3.9"

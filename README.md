@@ -27,11 +27,33 @@ and people who trust each other with a bookstore.
 
 ## Features
 
+**Core**
 - 🔡 Encode messages into `line.word.char` position triples
 - 📚 Decode them back with the same book
 - 🎲 Optional seed for reproducible (or plausibly deniable) output
 - 📊 `stats` — tells you what your book can and cannot encode
 - 🧾 Positions live in a plain text file — one triple per line, easy to hide
+
+**Formats & protection**
+- 📦 Convert positions between text / JSON / CSV / hex / base64 (`convert`)
+- 🔒 Passphrase encryption of positions (PBKDF2 + counter-mode SHA-256 + HMAC)
+- 🗝️ Book-derived one-time pad with a burn-after-use ledger (`otp-*`)
+- 🧩 Shamir secret sharing of passphrases — k-of-n recovery (`share-*`)
+
+**Steganography & disguise**
+- 📝 Hide positions inside generated prose (sentence-length codec, `stego-*`)
+- 🛒 Disguise positions as a shopping list, server log, invoice, or schedule (`disguise-*`)
+- 🔤 Acrostic and null-cipher message hiding
+
+**Analysis & operations**
+- 🩺 `doctor` — diagnoses a book, a position file, or a pair
+- 🕵️ `attack` — cryptanalysis yardsticks (chi-squared, IoC, entropy, leakage)
+- 🧮 `grid-*` — book-derived straddling checkerboard for compact digit streams
+- 🗣️ `voice-*` — render positions as phonetically distinct words to read aloud
+- 🧠 `mnemonic` — render a book fingerprint as a memorable word phrase
+- 🤝 `verify-*` — challenge/response ceremony proving you share the same edition
+- 📜 `audit-*` — hash-chained, tamper-evident operations log
+- 📬 `send` / `receive` — the whole pipeline (encode → encrypt/disguise → audit) in one envelope
 - 📦 Zero dependencies
 
 ## Install
@@ -80,6 +102,24 @@ bookcipher decode --book novel.txt --input coords.txt
 | `bookcipher decode --book <f> --input <f>` | Positions → message |
 | `bookcipher decode --book <f> --positions "1.0.2 2.3.0"` | Inline positions |
 | `bookcipher stats --book <f>` | Alphabet coverage report |
+| `bookcipher convert --input <f> --to hex` | Convert between formats |
+| `bookcipher encrypt --input <f> --passphrase <p>` | Encrypt positions |
+| `bookcipher decrypt --input <f> --passphrase <p>` | Decrypt positions |
+| `bookcipher otp-encrypt --book <f> --message <m> --page-start N --page-end M` | Book one-time pad |
+| `bookcipher share-split --secret <s> --k 2 --n 3 --out-dir <d>` | Shamir split |
+| `bookcipher share-combine --share <f> --share <f>` | Shamir recover |
+| `bookcipher stego-hide --input <f>` | Hide positions in prose |
+| `bookcipher disguise-hide --input <f> --scheme invoice` | Disguise as a document |
+| `bookcipher doctor --book <f>` | Diagnose a book |
+| `bookcipher attack --input <f> --book <f>` | Cryptanalysis yardsticks |
+| `bookcipher grid-encode --book <f> --message <m>` | Compact digit stream |
+| `bookcipher voice-hide --input <f>` | Positions → spoken words |
+| `bookcipher mnemonic --book <f>` | Fingerprint → word phrase |
+| `bookcipher verify-challenge --book <f> --salt <s>` | Edition-verification probes |
+| `bookcipher audit-log --log <f> --op encode` | Append to audit trail |
+| `bookcipher audit-verify --log <f>` | Verify audit chain |
+| `bookcipher send --book <f> --message <m> [--passphrase <p> \| --scheme <s>]` | Full send pipeline |
+| `bookcipher receive --book <f> --input <env>` | Full receive pipeline |
 
 ## How it works
 
@@ -91,6 +131,11 @@ bookcipher decode --book novel.txt --input coords.txt
 pip install pytest
 pytest
 ```
+
+The suite covers every module — core encode/decode, formats, crypto, the
+one-time pad, Shamir sharing, steganography, disguise schemes, the
+checkerboard, voice/word maps, the edition-verification ceremony, the audit
+chain, and the end-to-end protocol — with deterministic seeds throughout.
 
 ## License
 
