@@ -37,9 +37,6 @@ class TestEncodeDecode:
         assert "." in out  # triples
 
     def test_decode_inline(self, book_file, capsys):
-        main(["encode", "--book", book_file, "--message", "meet at dawn",
-              "--out", "ignored"])  # noqa: F841 -- just to get positions
-        capsys.readouterr()
         # Encode to stdout, capture, then decode.
         main(["encode", "--book", book_file, "--message", "meet at dawn", "--seed", "3"])
         positions_text = capsys.readouterr().out
